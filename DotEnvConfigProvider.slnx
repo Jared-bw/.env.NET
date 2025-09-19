@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="DotEnvConfigProvider.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/DotEnvConfigProvider/DotEnvConfigProvider.csproj" />
+  </Folder>
 </Solution>
