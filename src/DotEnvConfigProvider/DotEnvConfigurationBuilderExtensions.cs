@@ -9,7 +9,7 @@ namespace DotEnvConfigProvider;
 public static class DotEnvConfigurationBuilderExtensions
 {
     /// <summary>
-    /// Adds the dotenv configuration provider at app.env
+    /// Adds the dotenv configuration provider .env
     /// </summary>
     /// <param name="builder">
     /// The <see cref="IConfigurationBuilder"/> to add to.
@@ -21,9 +21,9 @@ public static class DotEnvConfigurationBuilderExtensions
         AddDotEnvFile(
             builder,
             provider: null,
-            path: "app.env",
-            optional: false,
-            reloadOnChange: false);
+            path: ".env",
+            optional: true,
+            reloadOnChange: true);
 
     /// <summary>
     /// Adds the dotenv configuration provider at 
