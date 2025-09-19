@@ -1,30 +1,30 @@
 ﻿namespace DotEnvConfigProvider;
 
-internal sealed class DotEnvConfigurationFileParser
+internal static class DotEnvConfigurationFileParser
 {
-    private DotEnvConfigurationFileParser() { }
-
-    private readonly Dictionary<string, string?> _data = 
-        new(StringComparer.OrdinalIgnoreCase);
-
-    public static IDictionary<string, string?> Parse(Stream input) =>
-        new DotEnvConfigurationFileParser().ParseStream(input);
-
-    private Dictionary<string, string?> ParseStream(Stream input)
+    public static IDictionary<string, string?> Parse(Stream input)
     {
         using TextReader reader = new StreamReader(input);
 
+        var data = new Dictionary<string, string?>(StringComparer.OrdinalIgnoreCase);
         var line = reader.ReadLine();
         while (line is not null)
         {
-            var data = line.Split('=', 2, StringSplitOptions.TrimEntries);
-            var key =  data[0];
-            var value = data[1];
-            _data.Add(key, value);
-            
+            try
+            {
+                var lineData = line.Split('=', 2, StringSplitOptions.TrimEntries);
+                var key = lineData[0];
+                var value = lineData[1];
+                data.Add(key, value);
+            }
+            catch 
+            {
+                // Ignore malformed lines
+            }
+
             line = reader.ReadLine();
         }
 
-        return _data;
+        return data;
     }
 }
