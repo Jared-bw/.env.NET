@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.FileProviders.Physical;
 
 namespace DotEnvConfigProvider;
 
@@ -17,6 +19,11 @@ public sealed class DotEnvConfigurationSource
         IConfigurationBuilder builder)
     {
         EnsureDefaults(builder);
+        if (FileProvider is PhysicalFileProvider physicalFileProvider)
+        {
+            FileProvider = new PhysicalFileProvider(physicalFileProvider.Root,
+                ExclusionFilters.Hidden | ExclusionFilters.System);
+        }
 
         return new DotEnvConfigurationProvider(this);
     }
