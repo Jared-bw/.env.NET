@@ -6,7 +6,7 @@ on:
       - prereleased
 
 jobs:
-  build:
+  nuget_publish:
 
     runs-on: ubuntu-latest
 
@@ -27,10 +27,7 @@ jobs:
         run: dotnet build --no-restore -c Release
         
       - name: Pack
-        run: dotnet pack .src/DotEnvConfigProvider -c Release --no-restore --no-build
+        run: dotnet pack src/DotEnvConfigProvider/DotEnvConfigProvider.csproj -c Release --no-restore --no-build
 
       - name: Push
-        run: dotnet nuget push ./src/DotEnvConfigProvider/bin/Release/*.nupkg \
-          --source https://apiint.nugettest.org/v3/index.json \
-          --api-key ${{secrets.test_nuget_api_key}}
- 
+        run: dotnet nuget push src/DotEnvConfigProvider/bin/Release/*.nupkg --source https://apiint.nugettest.org/v3/index.json --api-key ${{secrets.test_nuget_api_key}}
