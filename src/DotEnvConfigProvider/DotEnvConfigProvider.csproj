@@ -5,6 +5,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
+        <Authors>Jared Wang Bartlett-Wright</Authors>
+        <Version>9.0.9-beta</Version>
+        <Title>.env.NET</Title>
+        <Description>.env Configuration Provider for Microsoft IConfiguration abstraction.</Description>
+        <RepositoryUrl>https://github.com/Jared-bw/.env.NET</RepositoryUrl>
+        <PackageTags>configuration</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
