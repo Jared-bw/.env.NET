@@ -10,7 +10,7 @@ public class DotEnvConfigProviderTests
     {
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddDotEnvFile()
+            .AddDotEnvFile(path: "test.env", optional: false)
             .Build();
 
         var foo = config.GetValue<Foo>("bigFoo");

@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update=".env">
+      <None Update="test.env">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
