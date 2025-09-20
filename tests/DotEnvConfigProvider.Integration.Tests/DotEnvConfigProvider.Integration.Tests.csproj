@@ -22,7 +22,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DotEnvConfigProvider.Api\DotEnvConfigProvider.Api.csproj" />
+      <None Update=".env">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\DotEnvConfigProvider\DotEnvConfigProvider.csproj" />
     </ItemGroup>
 
 </Project>

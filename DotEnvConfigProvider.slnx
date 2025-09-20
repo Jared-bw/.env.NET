@@ -4,6 +4,5 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/DotEnvConfigProvider.Integration.Tests\DotEnvConfigProvider.Integration.Tests.csproj" Type="Classic C#" />
-    <Project Path="tests/DotEnvConfigProvider.Api/DotEnvConfigProvider.Api.csproj" />
   </Folder>
 </Solution>
