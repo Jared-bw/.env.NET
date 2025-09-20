@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <Authors>Jared Wang Bartlett-Wright</Authors>
-        <Version>9.0.9-beta</Version>
+        <Version>9.0.9-alpha</Version>
         <PackageId>DotEnvConfigProvider</PackageId>
         <Copyright>©2025 Jared Wang Bartlett-Wright</Copyright>
         <Title>.env.NET</Title>
