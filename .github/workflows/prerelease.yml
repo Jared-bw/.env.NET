@@ -1,0 +1,36 @@
+name: Pre-release
+
+on:
+  release:
+    types:
+      - prereleased
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+        
+      - name: Pack
+        run: dotnet pack .src/DotEnvConfigProvider -c Release --no-restore --no-build
+
+      - name: Push
+        run: dotnet nuget push ./src/DotEnvConfigProvider/bin/Release/*.nupkg \
+          --source https://apiint.nugettest.org/v3/index.json \
+          --api-key ${{secrets.test_nuget_api_key}}
+ 
