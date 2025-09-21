@@ -12,9 +12,10 @@ internal static class DotEnvConfigurationFileParser
         {
             try
             {
-                var lineData = line.Split('=', 2, StringSplitOptions.TrimEntries);
-                var key = lineData[0];
-                var value = lineData[1];
+                var equalsIndex = line.IndexOf('=');
+                var key = line.Substring(0, equalsIndex);
+                var value = line.Substring(equalsIndex + 1, line.Length - equalsIndex - 1);
+                
                 data.Add(key, value);
             }
             catch 

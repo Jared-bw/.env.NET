@@ -127,8 +127,15 @@ public static class DotEnvConfigurationBuilderExtensions
         bool optional,
         bool reloadOnChange)
     {
-        ArgumentNullException.ThrowIfNull(builder);
-        ArgumentException.ThrowIfNullOrWhiteSpace(path);
+        if (builder is null)
+        {
+            throw new ArgumentNullException(nameof(builder));
+        }
+
+        if (path is null)
+        {
+            throw new ArgumentNullException(nameof(path));
+        }
 
         return builder.AddDotEnvFile(s =>
         {
