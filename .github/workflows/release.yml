@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  nuget_publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+        
+      - name: Pack
+        run: dotnet pack src/DotEnvConfigProvider/DotEnvConfigProvider.csproj -c Release --no-restore --no-build
+
+      - name: Push
+        run: dotnet nuget push src/DotEnvConfigProvider/bin/Release/*.nupkg --source https://int.nuget.org/v3/index.json --api-key ${{secrets.nuget_api_key}}
