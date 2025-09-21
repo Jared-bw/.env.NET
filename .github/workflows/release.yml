@@ -30,4 +30,4 @@ jobs:
         run: dotnet pack src/DotEnvConfigProvider/DotEnvConfigProvider.csproj -c Release --no-restore --no-build
 
       - name: Push
-        run: dotnet nuget push src/DotEnvConfigProvider/bin/Release/*.nupkg --source https://int.nuget.org/v3/index.json --api-key ${{secrets.nuget_api_key}}
+        run: dotnet nuget push src/DotEnvConfigProvider/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.nuget_api_key}}
