@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <Authors>Jared Wang Bartlett-Wright</Authors>
-        <Version>9.0.9-alpha</Version>
+        <Version>9.0.0-rc</Version>
         <PackageId>DotEnvConfigProvider</PackageId>
         <Copyright>©2025 Jared Wang Bartlett-Wright</Copyright>
         <Title>.env.NET</Title>
@@ -21,7 +21,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="[9.0.0,10.0.0)"/>
     </ItemGroup>
 
     <ItemGroup>
