@@ -62,3 +62,56 @@ var configuration = new ConfigurationBuilder()
     .AddDotEnvFile(".env", optional: true, reloadOnChange: false)
     .Build();
 ```
+
+## Complete Examples
+
+### ASP.NET Core Web Application
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+// Add .env file support
+builder.Configuration.AddDotEnvFile();
+
+// Add other configuration sources
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables();
+
+var app = builder.Build();
+```
+
+### Console Application
+
+```csharp
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using DotEnvConfigProvider;
+
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        config.AddDotEnvFile(".env", optional: true, reloadOnChange: true);
+    })
+    .ConfigureServices((context, services) =>
+    {
+        // Register your services here
+    })
+    .Build();
+
+
+```
+
+### Multiple Environment Files
+
+```csharp
+var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
+var configuration = new ConfigurationBuilder()
+    .AddDotEnvFile(".env", optional: true)  // Base .env file
+    .AddDotEnvFile($".env.{environment}", optional: true)  // Environment-specific
+    .AddDotEnvFile(".env.local", optional: true)  // Local overrides
+    .Build();
+```
