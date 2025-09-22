@@ -12,7 +12,7 @@
         <Title>.env .NET</Title>
         <Description>.env Configuration Provider for Microsoft IConfiguration abstraction.</Description>
         <RepositoryUrl>https://github.com/Jared-bw/.env.NET</RepositoryUrl>
-        <PackageTags>configuration extensions</PackageTags>
+        <PackageTags>dotenv env configuration environment variables extensions</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryType>git</RepositoryType>
         <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
