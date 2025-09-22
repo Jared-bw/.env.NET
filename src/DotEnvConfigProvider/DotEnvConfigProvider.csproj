@@ -6,10 +6,10 @@
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <Authors>Jared Wang Bartlett-Wright</Authors>
-        <Version>9.0.0-rc</Version>
-        <PackageId>DotEnvConfigProvider</PackageId>
+        <Version>1.0.0</Version>
+        <PackageId>DotEnv.Microsoft.Extensions.Configuration</PackageId>
         <Copyright>©2025 Jared Wang Bartlett-Wright</Copyright>
-        <Title>.env.NET</Title>
+        <Title>.env .NET</Title>
         <Description>.env Configuration Provider for Microsoft IConfiguration abstraction.</Description>
         <RepositoryUrl>https://github.com/Jared-bw/.env.NET</RepositoryUrl>
         <PackageTags>configuration</PackageTags>
