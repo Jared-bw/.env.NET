@@ -9,7 +9,7 @@ namespace DotEnvConfigProvider;
 /// Initializes a new instance with the specified <paramref name="source"/>.
 /// </remarks>
 /// <param name="source">The .env configuration source.</param>
-public sealed class DotEnvConfigurationProvider(
+internal sealed class DotEnvConfigurationProvider(
     DotEnvConfigurationSource source) : FileConfigurationProvider(source)
 {
     /// <summary>
