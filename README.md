@@ -1,12 +1,8 @@
 # Features
 
-Loads environment variables from a .env file.
-Integrates with Microsoft.Extensions.Configuration so .env values can be read like other config sources.
+Unambitious .env file configuration provider.
+Integrates with `Microsoft.Extensions.Configuration` so .env values can be read like other config sources.
 Lightweight, minimal dependencies.
-
-## Contributions welcome
-
-The parser is pretty dumb. You could immediately understand what it does at a glance.
 
 # Why use it
 If you’re building a .NET app and want to:
@@ -17,9 +13,9 @@ If you’re building a .NET app and want to:
 
 ...then .Env.NET helps you do that cleanly within the .NET configuration framework.
 
-## Basic Usage
+# Basic Usage
 
-### Simple .env File Loading
+## Simple .env File Loading
 
 Load a `.env` file from the application root with default settings (optional, reload on change):
 
@@ -33,7 +29,7 @@ This will look for a `.env` file in the application's base directory with these 
 - File is optional (won't throw if missing)
 - Automatically reloads when file changes
 
-### Load Specific .env File
+## Load Specific .env File
 
 Load a .env file from a specific path:
 
@@ -43,7 +39,7 @@ var configuration = new ConfigurationBuilder()
     .Build();
 ```
 
-### Required .env File
+## Required .env File
 
 Make the .env file required (throws exception if missing):
 
@@ -53,7 +49,7 @@ var configuration = new ConfigurationBuilder()
     .Build();
 ```
 
-### Disable Reload on Change
+## Disable Reload on Change
 
 Load .env file without automatic reloading:
 
@@ -63,9 +59,9 @@ var configuration = new ConfigurationBuilder()
     .Build();
 ```
 
-## Complete Examples
+# Complete Examples
 
-### ASP.NET Core Web Application
+## ASP.NET Core Web Application
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -82,7 +78,7 @@ builder.Configuration
 var app = builder.Build();
 ```
 
-### Console Application
+## Console Application
 
 ```csharp
 using Microsoft.Extensions.Configuration;
@@ -104,7 +100,7 @@ var host = Host.CreateDefaultBuilder(args)
 
 ```
 
-### Multiple Environment Files
+## Multiple Environment Files
 
 ```csharp
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
