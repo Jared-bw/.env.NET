@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DotEnvConfigProvider;
 using Microsoft.Extensions.FileProviders;
 
-namespace DotEnvConfigProvider;
+namespace Microsoft.Extensions.Configuration;
 
 /// <summary>
 /// Extension methods for adding <see cref="DotEnvConfigurationProvider"/>.
