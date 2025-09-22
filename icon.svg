@@ -1,0 +1,40 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img"
+     aria-labelledby="title">
+    <title id="title">.env package icon</title>
+    <defs>
+        <linearGradient id="bgGrad" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#512BD4"/>
+            <stop offset="1" stop-color="#6826B0"/>
+        </linearGradient>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+        </filter>
+    </defs>
+
+    <!-- Rounded square background -->
+    <rect x="4" y="4" width="120" height="120" rx="18" ry="18" fill="url(#bgGrad)" filter="url(#softShadow)"/>
+
+    <!-- File shape with folded corner -->
+    <path d="M18 18 H86 L110 42 V110 H18 Z" fill="rgba(255, 255, 255, 0.06)"/>
+    <path d="M86 18 L110 42 L86 42 Z" fill="rgba(255, 255, 255, 0.12)"/>
+
+    <!-- Inner overlay for depth -->
+    <rect x="22" y="48" width="84" height="58" rx="6" fill="rgba(255,255,255,0.06)"/>
+
+    <!-- .env text in Segoe UI Semibold style -->
+    <text x="50%" y="44%" text-anchor="middle" dominant-baseline="middle"
+          font-family="Segoe UI, Segoe UI Semibold, 'Segoe UI Bold', Arial, sans-serif"
+          font-weight="600"
+          font-size="40" fill="#FFFFFF" letter-spacing="0.5px">
+        .env
+    </text>
+
+    <!-- Wrapped subtitle -->
+    <text x="50%" y="70%" text-anchor="middle"
+          font-family="Segoe UI, Arial, sans-serif"
+          font-weight="400"
+          font-size="9" fill="rgba(255,255,255,0.85)">
+        <tspan x="50%" dy="0">Configuration provider</tspan>
+        <tspan x="50%" dy="12">for .NET</tspan>
+    </text>
+</svg>

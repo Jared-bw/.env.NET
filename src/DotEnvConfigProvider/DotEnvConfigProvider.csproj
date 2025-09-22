@@ -12,12 +12,13 @@
         <Title>.env .NET</Title>
         <Description>.env Configuration Provider for Microsoft IConfiguration abstraction.</Description>
         <RepositoryUrl>https://github.com/Jared-bw/.env.NET</RepositoryUrl>
-        <PackageTags>configuration</PackageTags>
+        <PackageTags>configuration extensions</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryType>git</RepositoryType>
         <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -29,6 +30,11 @@
             <Pack>True</Pack>
             <PackagePath></PackagePath>
             <Link>README.md</Link>
+        </None>
+        <None Include="..\..\icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+            <Link>icon.png</Link>
         </None>
     </ItemGroup>
 
