@@ -15,7 +15,6 @@ public static class DotEnvConfigurationBuilderExtensions
     /// The <see cref="IConfigurationBuilder"/> to add to.
     /// </param>
     /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
-
     public static IConfigurationBuilder AddDotEnvFile(
         this IConfigurationBuilder builder) =>
         AddDotEnvFile(
@@ -44,7 +43,7 @@ public static class DotEnvConfigurationBuilderExtensions
         AddDotEnvFile(
             builder,
             provider: null, path: path,
-            optional: false,
+            optional: true,
             reloadOnChange: false);
 
     /// <summary>
@@ -97,8 +96,8 @@ public static class DotEnvConfigurationBuilderExtensions
         AddDotEnvFile(
             builder,
             provider: null,
-            path: path, optional:
-            optional,
+            path: path,
+            optional: optional,
             reloadOnChange: reloadOnChange);
 
     /// <summary>
